@@ -1,0 +1,13 @@
+[project]
+name = "nba-statistics"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = []
+dependencies = []
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
