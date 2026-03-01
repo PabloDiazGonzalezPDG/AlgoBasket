@@ -27,3 +27,6 @@ venv/
 # Editors
 .vscode/
 .idea/
+
+# Data outputs
+*.parquet

@@ -1,0 +1,18 @@
+seasons:
+  - "2025-26"
+season_types:
+  - "Regular Season"
+  - "Playoffs"
+teams: "all"
+output_root: "02_data/01_raw"
+output_format: "parquet"
+rate_limit:
+  sleep_seconds: 0.6
+  max_retries: 5
+  backoff_seconds: 1.0
+steps:
+  - "static_teams"
+  - "team_season"
+  - "team_game"
+  - "player_game"
+  - "player_season"
