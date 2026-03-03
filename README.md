@@ -27,6 +27,26 @@ Notes:
 - Parquet is preferred; if it fails, the pipeline falls back to CSV.
 - Parquet outputs are ignored by git via `.gitignore`.
 
+## Cleaning Pipeline
+Raw data and cleaned data are stored separately:
+- Raw: `02_data/01_raw/<SEASON_FOLDER>/...`
+- Cleaned: `02_data/02_cleaned/<SEASON_FOLDER>/...`
+
+Team-season cleaning reads all raw parquet files under:
+`02_data/01_raw/<SEASON_FOLDER>/02_team_season/<endpoint>/`
+and writes one merged cleaned parquet per endpoint to:
+`02_data/02_cleaned/<SEASON_FOLDER>/02_team_season/<endpoint>/`
+
+Run the cleaning entrypoint:
+```bash
+python 01_scripts/02_cleaning/00_run_all.py --season 2025_26
+```
+
+Optional flags:
+- `--raw-root` to override the raw base path.
+- `--clean-root` to override the cleaned base path.
+- `--dry-run` to validate without writing outputs.
+
 ## Data Sources
 Data is pulled from `nba_api` endpoints and stored by season and endpoint.
 
